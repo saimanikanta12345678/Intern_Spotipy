@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <h2>Enter City Name</h2>
+    <input type="text" id="city-input">
+    <script>
+    var api_key = "2144ee2e1866a91955950d7c1e4f7d5b";
+
+    function getWeatherReport(city) {
+        var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(weatherData => {
+                var weatherMain = weatherData.weather[0].main;
+                var temperature = weatherData.main.temp - 273.15;
+                var rainingStatus = weatherMain.toLowerCase() === 'rain' ? 1 : 0;
+
+                document.getElementById('weather-status').textContent = `Raining: ${rainingStatus ? 'Yes' : 'No'}`;
+                document.getElementById('temperature').textContent = `Temperature: ${temperature.toFixed(2)}°C`;
+
+                // Select the appropriate option based on the raining status
+                var dropdown = document.getElementById("options-dropdown");
+                dropdown.value = rainingStatus ? "RAIN" : "POPULAR PICKS";
+
+                // Get the value of the selected option
+                var selectedOption = dropdown.value;
+
+                // Update the right frame based on the selected option
+                var rightFrame = parent.frames['right'];
+
+                if (selectedOption === 'MELODY') {
+                    rightFrame.location.href = 'melody.html';
+                } else if (selectedOption === 'ROCK') {
+                    rightFrame.location.href = 'rock.html';
+                }
+                 else if (selectedOption === 'POPULAR PICKS') {
+                    rightFrame.location.href = 'popular.html';
+                }
+                 else if (selectedOption === 'DEVOTIONAL') {
+                    rightFrame.location.href = 'dev.html';
+                }
+                 else if (selectedOption === 'ROMANTIC') {
+                    rightFrame.location.href = 'romance.html';
+                }
+                else if (selectedOption === 'FOLK') {
+                    rightFrame.location.href = 'folk.html';
+                }
+                 else if (selectedOption === 'DANCE') {
+                    rightFrame.location.href = 'dance.html';
+                }
+                 else if (selectedOption === 'BREAKUP') {
+                    rightFrame.location.href = 'break.html';
+                }
+                else if (selectedOption === 'RAIN') {
+                    rightFrame.location.href = 'rain.html';
+                }
+
+
+                // Add more conditions for other options if needed
+            })
+            .catch(error => console.log(error));
+    }
+
+    document.getElementById('city-input').addEventListener('input', function () {
+        var city = this.value;
+        getWeatherReport(city);
+    });
+</script>
+  <p id="greet"></p>
+    <div>
+        <p id="weather-status"></p>
+        <p id="temperature"></p>
+    </div>
+<select id="options-dropdown">
+    <option value="POPULAR PICKS">POPULAR PICKS</option>
+    <option value="MELODY">MELODY</option>
+    <option value="DEVOTIONAL">DEVOTIONAL</option>
+    <option value="ROMANTIC">ROMANTIC</option>
+    <option value="FOLK">FOLK</option>
+    <option value="DANCE">DANCE</option>
+    <option value="BREAKUP">BREAKUP</option>
+    <option value="RAIN">RAIN</option>
+    <option value="ROCK">ROCK</option>
+</select>
+
+<script>
+    var dropdown = document.getElementById("options-dropdown");
+
+    dropdown.addEventListener("change", function() {
+        var selectedOption = dropdown.value;
+        // You can perform any action with the selected option here
+        console.log("Selected option:", selectedOption);
+
+        // Update the right frame based on the selected option
+        var rightFrame = parent.frames['right'];
+
+        if (selectedOption === 'MELODY') {
+            rightFrame.location.href = 'melody.html';
+        } else if (selectedOption === 'ROCK') {
+            rightFrame.location.href = 'rock.html';
+        } else if (selectedOption === 'POPULAR PICKS') {
+        rightFrame.location.href = 'popular.html';
+    } else if (selectedOption === 'DEVOTIONAL') {
+        rightFrame.location.href = 'dev.html';
+    } else if (selectedOption === 'ROMANTIC') {
+        rightFrame.location.href = 'romance.html';
+    } else if (selectedOption === 'FOLK') {
+        rightFrame.location.href = 'folk.html';
+    } else if (selectedOption === 'DANCE') {
+        rightFrame.location.href = 'dance.html';
+    } else if (selectedOption === 'BREAKUP') {
+        rightFrame.location.href = 'break.html';
+    } else if (selectedOption === 'RAIN') {
+        rightFrame.location.href = 'rain.html';
+    }
+        // Add more conditions for other options if needed
+    });
+</script>
+
+</body>
+</html>
