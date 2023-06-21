@@ -1,7 +1,29 @@
 const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
 const messages = document.getElementById("chat-messages");
-const apiKey = "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";
+
+const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
+const client = new SecretManagerServiceClient();
+async function getSecretValue() {
+  const [version] = await client.accessSecretVersion({
+    name: 'projects/569816125116/secrets/music/versions/1',
+  });
+
+  const secretValue = version.payload.data.toString();
+  return secretValue;
+}
+
+// Call the function to get the secret value
+getSecretValue()
+  .then(secretValue => {
+    // Use the secret value in your code
+    console.log('Secret value:', secretValue);
+  })
+  .catch(err => {
+    console.error('Error retrieving secret value:', err);
+  });
+
+
 
 const userMessages=[];
 const context = [
