@@ -1,8 +1,8 @@
 body {
   font-family: "Open Sans", sans-serif;
-  background-color:rgba(177, 138, 10, 0.584);
-  /* background-image: url(https://t3.ftcdn.net/jpg/02/52/63/16/360_F_252631636_qnuNZp2bx1rjXJt2ydrsMVRTaMA1Nd43.jpg);/*
-  background-image: url("/static/waiter.png"); */
+  background-color:rgba(242, 240, 232, 0.584);
+  /* background-image: url('https://static.vecteezy.com/system/resources/previews/007/531/023/non_2x/beautiful-colorful-gradient-background-combination-of-bright-colors-soft-and-smooth-texture-used-for-background-free-vector.jpg'); */
+  
   background-repeat: no-repeat;
   background-size:16%;
   background-position: center; 
@@ -20,15 +20,17 @@ header {
 }
 
 #chat-window {
-  width: 600px;
-  height: 650px;
-  border: 5px solid #ea1f1f;
+  width: 500px;
+  height: 550px;
+  border: 2px solid #655e5e6a;
+  border-radius: 15px;
   padding: 10px;
   margin: 0 auto;
+  background-color: rgb(151, 151, 211);
 }
 
 #chat-messages {
-  height: 500px;
+  height: 370px;
   overflow-y: scroll;
   padding: 10px;
   margin-bottom: 10px;
@@ -40,7 +42,8 @@ header {
 
 #message-input {
   flex: 1;
-  border-radius: 20px;
+  border-radius: 10px;
+
 }
 
 #message-form button {
@@ -58,7 +61,7 @@ button[type="submit"] {
   font-weight: bold;
 }
 
-button[type="submit"]:hover {
+button[type="button"]:hover {
   padding: 10px 20px;
   border-radius: 20px;
   background-color: tomato;
@@ -66,6 +69,17 @@ button[type="submit"]:hover {
   border: 2px solid tomato;
   font-size: 1rem;
   font-weight: bold;
+}
+
+#end-chat-button{
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: rgb(248, 245, 244);
+  color: rgb(253, 250, 249);
+  border: 2px solid tomato;
+  font-size: 1rem;
+  font-weight: bold;
+
 }
 /* Hide the scrollbar */
 #chat-messages::-webkit-scrollbar {
@@ -84,7 +98,7 @@ button[type="submit"]:hover {
   font-family: "Roboto", sans-serif;
   background-color: #b4624051; /* different light color */
   text-align: justify; /* keep it right-aligned */
-  padding: 10px; /* added padding */
+  padding: 5px; /* added padding */
   margin-top: 20px; /* added margin-top to create a gap */
   margin-bottom: 10px;
   margin-right: 10%;
@@ -102,7 +116,7 @@ button[type="submit"]:hover {
   font-family: "Nunito", sans-serif;
   background-color:rgba(216, 46, 12, 0.542); /* light color */
   text-align: left; /* changed text align to left */
-  padding: 10px; /* added padding */
+  padding: 5px; /* added padding */
   display: flex;
   color:white;
   width:fit-content;
@@ -114,8 +128,8 @@ button[type="submit"]:hover {
 }
 .user-message img,
 .bot-message img {
-  width: 40px; /* adjust the width of the icon */
-  height: 40px; /* adjust the height of the icon */
+  width: 30px; /* adjust the width of the icon */
+  height: 30px; /* adjust the height of the icon */
   margin-right: 20px; /* add some margin to separate the icon from the message */
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
@@ -146,4 +160,6 @@ button[type="submit"]:hover {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-bottom: 0.5rem;
   color: #fffbf5;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -5,7 +5,7 @@ import openai
 # load_dotenv()
 
 # api_key = os.getenv("API_KEY")
-openai.api_key = "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"
+openai.api_key = "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"
 
 # Rest of your code using the OpenAI library
 

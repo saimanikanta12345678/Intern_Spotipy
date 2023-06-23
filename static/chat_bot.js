@@ -64,6 +64,10 @@ async function sendUserMessage(message) {
   }
 }
 
+document.getElementById('end-chat-button').addEventListener('click', function() {
+  endChat();
+});
+
 document.getElementById("chat-form").addEventListener("submit", function(e) {
   e.preventDefault();
   sendMessage();
@@ -84,9 +88,6 @@ function sendMessage() {
   sendUserMessage(userMessage);
 }
 
-// document.getElementById('end').addEventListener('click', function() {
-//   endChat();
-// });
 
 // document.getElementById('end-chat-button').addEventListener('click', endChat);
 
@@ -96,10 +97,10 @@ function sendMessage() {
 
 
 // Remove the existing event listener for the "End Chat" button
-document.getElementById('end-chat-button').removeEventListener('click', endChat);
+// document.getElementById('end-chat-button').removeEventListener('click', endChat);
 
 // Add a new event listener for the "End Chat" button
-document.getElementById('end-chat-button').addEventListener('click', endChat);
+// document.getElementById('end-chat-button').addEventListener('click', endChat);
 
 // Update the endChat function to handle the chat ending logic
 function endChat() {

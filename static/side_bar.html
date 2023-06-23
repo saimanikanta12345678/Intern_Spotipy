@@ -3,8 +3,10 @@
 <head>
     <style>
         body {
-            background-color: rgb(61, 186, 231);
+            background-color: rgb(151, 151, 211);
+            
         }
+
         .greet {
             font-size: 30px;
             font-weight: bold;
@@ -12,14 +14,39 @@
             margin-top: 10px;
             float: left;
         }
+
         #options-container button {
-            width: 220px;
-            height: 45px;
-            background-color: #e9f0e9;
-            color: rgb(12, 0, 0);
+            width: 240px;
+            height: 40px;
+            background-color: rgba(30, 30, 186, 0.574);
+            color:white;
             font-size: 16px;
             margin-bottom: 10px;
             border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            float: center;
+            
+            
+        }
+
+        #options-container button::before {
+            content: "";
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+
+        #options-container button:hover::before {
+            transform: scale(3);
+        }
+
+        #options-container button:focus::before {
+            transform: scale(3);
         }
     </style>
 </head>
