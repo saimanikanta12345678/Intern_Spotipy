@@ -1,68 +1,92 @@
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #C2DEDC;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6f1Q1jO3bUYfEa6XxPN-OrUCUBZlns2DtlQ&usqp=CAU");
-  background-size: cover;
+  background-color:rgba(177, 138, 10, 0.584);
+  /* background-image: url(https://t3.ftcdn.net/jpg/02/52/63/16/360_F_252631636_qnuNZp2bx1rjXJt2ydrsMVRTaMA1Nd43.jpg);/*
+  background-image: url("/static/waiter.png"); */
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size:16%;
+  background-position: center; 
+}
+header {
+  width:auto;
+  margin:-1%;
 }
 
-div p{
-  width:30%;
-}
-#chat-window {
-  width: 750px;
-  height: 650px;
-  margin-top: 0%;
-  background-color: rgb(246, 248, 244);
+#main-content {
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
-  border-radius: 10px;
-  background-image: url();
+  margin-top: 1%;
 }
-#head{
-  background-color:white;
-  padding:0;
-  margin: 0px;
-  height:16%;
+
+#chat-window {
+  width: 600px;
+  height: 650px;
+  border: 5px solid #ea1f1f;
+  padding: 10px;
+  margin: 0 auto;
 }
+
 #chat-messages {
+  height: 500px;
+  overflow-y: scroll;
   padding: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  height: calc(100vh - 100px);
-  /* max-height: calc(100vh - 100px); */
-  overflow: auto;
 }
 
-#chat-form {
+#message-form {
   display: flex;
-  align-items: center;
 }
 
-#chat-input {
-  flex-grow: 1;
-  padding: 5px;
-  margin-right: 10px;
+#message-input {
+  flex: 1;
   border-radius: 20px;
-  border: 1px solid #ccc;
 }
+
+#message-form button {
+  margin-left: 10px;
+}
+
 
 button[type="submit"] {
   padding: 10px 20px;
   border-radius: 20px;
   background-color: #f7efe5;
   color: rgb(213, 106, 67);
-  border: none;
-  margin-top: 0%;
+  border: 2px solid tomato;
   font-size: 1rem;
   font-weight: bold;
 }
+
+button[type="submit"]:hover {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: tomato;
+  color: rgb(253, 250, 249);
+  border: 2px solid tomato;
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* Hide the scrollbar */
+#chat-messages::-webkit-scrollbar {
+  width: 0.5em; /* Adjust the width as needed */
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background-color: transparent; /* Change the color or remove it if not needed */
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Change the color or remove it if not needed */
+}
+
 .bot-message {
   font-family: "Roboto", sans-serif;
-  background-color: #94B49F; /* different light color */
+  background-color: #b4624051; /* different light color */
   text-align: justify; /* keep it right-aligned */
-  padding: 3px; /* added padding */
-  margin-top: 5%; /* added margin-top to create a gap */
+  padding: 10px; /* added padding */
+  margin-top: 20px; /* added margin-top to create a gap */
+  margin-bottom: 10px;
   margin-right: 10%;
   display: flex;
   color:white;
@@ -76,15 +100,13 @@ button[type="submit"] {
 
 .user-message {
   font-family: "Nunito", sans-serif;
-  background-color:#94B49F; /* light color */
+  background-color:rgba(216, 46, 12, 0.542); /* light color */
   text-align: left; /* changed text align to left */
-  padding: 3px; /* added padding */
+  padding: 10px; /* added padding */
   display: flex;
   color:white;
   width:fit-content;
   float:right;
-  margin-top:2%;
-  margin-bottom: 2%;
   margin-right: 5%;
   align-items: center;
   font-style: italic;
@@ -92,29 +114,27 @@ button[type="submit"] {
 }
 .user-message img,
 .bot-message img {
-
-  width: 40px; 
-  height: 40px; 
-  margin-right: 20px; 
+  width: 40px; /* adjust the width of the icon */
+  height: 40px; /* adjust the height of the icon */
+  margin-right: 20px; /* add some margin to separate the icon from the message */
 }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
   #chat-window {
-    width: 100%;
+    width: 90%;
   }
 }
 .main-title {
   background-color: black;
-  border-radius: 18px;
-  font-size:26px;
-  width:30%;
-  text-align: center;
-  padding: 2px;
-  margin-top: 0.1rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-bottom: 0.3rem;
-  color: #fffbf5;
-  font-style: italic;
+    border-radius: 18px;
+    font-size:26px;
+    width:30%;
+    text-align: center;
+    padding: 2px;
+    margin-top: rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 0.3rem;
+    color: #fffbf5;
+    font-style: italic;
 }
 .sub-title {
   background-color: rgba(248, 59, 59, 0.918);
@@ -126,17 +146,4 @@ button[type="submit"] {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-bottom: 0.5rem;
   color: #fffbf5;
-}
-
-/* Hide the scrollbar */
-#chat-messages::-webkit-scrollbar {
-  width: 0.5em; /* Adjust the width as needed */
-}
-
-#chat-messages::-webkit-scrollbar-track {
-  background-color: transparent; /* Change the color or remove it if not needed */
-}
-
-#chat-messages::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Change the color or remove it if not needed */
 }

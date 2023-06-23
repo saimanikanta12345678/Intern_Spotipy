@@ -9,30 +9,19 @@
   </head>
   
   <body>
-    
-    <center> 
-    <div id="chat-window">
-       <div id="head"> <centre><div class="main-title">CHAT BOT</div></centre>
-        <centre><div class="sub-title">Hello user. I am an AI Assistant.</div></centre>
-        </div>
-        <!-- <centre><div><h4 style="background-color:rgb(234, 84, 19)">Hello user!!I am an AI Assistant.</h4></div></centre> -->
-      <div id="chat-messages"></div>
-      <form id="chat-form">
-        <input
-          type="text"
-          id="chat-input"
-          autocomplete="off"
-          placeholder="Type your message here"
-          required
-        />
-        <button type="submit"><i class="fa fa-paper-plane-o fa-lg" style="color: rgb(213, 106, 67)"></i></button>&nbsp;
+   
 
-        <button type="submit" id="endChatButton">End Chat</button>
-      </form>
-    </div>
-    
-    
-</center>  
+<div id="chat-window">
+  <center><h1 style="background-color:black;color:rgb(251, 248, 248);width: 50%;border-radius: 15px;">CHATBOT</h1></center>
+  <centre><div class="sub-title">Hello user. I am an AI Assistant.</div></centre>
+  <div id="chat-messages"></div>
+  <form id="message-form">
+    <input type="text" id="message-input" placeholder="Type a message..." required />
+    <button id="send-button" type="submit" style="color: #03045F"><i class="fa fa-paper-plane fa-lg"></i></button>&nbsp;
+    <button id="end-chat-button" type="submit" style="color: #03045F">End Chat</button>
+  </form>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
     <!-- <script src="config.js"></script> -->
     <script src="/static/chat_bot.js"></script>
